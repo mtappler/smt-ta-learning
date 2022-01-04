@@ -1,0 +1,57 @@
+Time logs for cas-rest
+==================================
+Configuration:
+==================================
+BFS: true 
+Batch size: 1 
+Location Bound: 9 
+Edge Bound: 18 
+# Training Traces: 50 
+k-Urgency: 3 
+Max. Guard Constant: 33 
+Solver: YICES2 
+Mode: Real 
+Rounding: 1 
+Learning time summary: 
+==================================
+Mean          :7451.58         sec / 124.19     min
+Max           :7451.58         sec / 124.19     min
+Min           :7451.58         sec / 124.19     min
+Median        :7451.58         sec / 124.19     min
+Automaton size summary: 
+==================================
+Mean          :6.00
+Max           :6.00
+Min           :6.00
+Median        :6.00
+Model metrics summary: 
+==================================
+Precision:
+Mean          :0.97
+Max           :0.97
+Min           :0.97
+Median        :0.97
+Recall:
+Mean          :0.88
+Max           :0.88
+Min           :0.88
+Median        :0.88
+F1:
+Mean          :0.92
+Max           :0.92
+Min           :0.92
+Median        :0.92
+Results for individual experiments: 
+==================================
+cas-rest       :
+Learning Time  : 7451.58         sec / 124.19     min
+TA Size        : 6
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 176
+True Negatives: 195
+False Positives: 5
+False Negatives: 24
+Precision: 0.97
+Recall: 0.88
+F1: 0.92

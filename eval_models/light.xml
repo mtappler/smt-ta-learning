@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'>!-->
+<nta>
+	<declaration>// Place global declarations here.
+broadcast chan press;
+broadcast chan release;
+broadcast chan touch;
+broadcast chan starthold;
+broadcast chan endhold;
+clock c;
+int s = 0;</declaration>
+	<template>
+		<name x="5" y="5">Light</name>
+		<declaration>// Place local declarations here.</declaration>
+		<location id="id1" x="76" y="-85">
+		</location>
+		<location id="id2" x="76" y="68">
+			<label kind="invariant" x="-34" y="42">c &lt;= 13</label>
+		</location>
+		<location id="id3" x="76" y="204">
+		</location>
+		<location id="id4" x="-110" y="204">
+			<name x="-102" y="153">Endhold</name>
+			<label kind="invariant" x="-136" y="221">c &lt;= 3</label>
+		</location>
+		<location id="id5" x="246" y="68">
+			<label kind="invariant" x="236" y="85">c &lt;= 3</label>
+		</location>
+		<init ref="id1"/>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-34" y="85">press!</label>
+			<label kind="assignment" x="-34" y="102">s++</label>
+			<nail x="50" y="136"/>
+			<nail x="8" y="119"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="153" y="178">press!</label>
+			<label kind="assignment" x="153" y="195">s++</label>
+			<nail x="144" y="170"/>
+			<nail x="144" y="263"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="52" y="-187">release!</label>
+			<label kind="assignment" x="52" y="-170">s++</label>
+			<nail x="119" y="-170"/>
+			<nail x="34" y="-170"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-34" y="-17">c &lt; 5</label>
+			<label kind="synchronisation" x="-34" y="-34">release!</label>
+			<label kind="assignment" x="-34" y="0">s++</label>
+			<nail x="34" y="-8"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="94" y="-102">touch!</label>
+			<label kind="assignment" x="94" y="-85">s++</label>
+			<nail x="246" y="-85"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id5"/>
+			<label kind="guard" x="94" y="34">c &gt;= 5</label>
+			<label kind="synchronisation" x="94" y="51">release!</label>
+			<label kind="assignment" x="94" y="68">c:=0, s++</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="-92" y="-102">endhold!</label>
+			<label kind="assignment" x="-92" y="-85">s++</label>
+			<nail x="-110" y="-85"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-85" y="187">release!</label>
+			<label kind="assignment" x="-85" y="204">c:=0, s++</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="guard" x="76" y="102">c &gt;= 10</label>
+			<label kind="synchronisation" x="76" y="119">starthold!</label>
+			<label kind="assignment" x="76" y="136">s++</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="110" y="-59">press!</label>
+			<label kind="assignment" x="110" y="-42">c:=0, s++</label>
+			<nail x="115" y="-4"/>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+// List one or more processes to be composed into a system.
+system Light;
+    </system>
+	<queries>
+		<query>
+			<formula>E&lt;&gt; s==50</formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>

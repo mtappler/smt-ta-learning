@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>!-->
+<nta>
+	<declaration>// Place global declarations here.
+
+clock c;
+
+broadcast chan open;
+broadcast chan close;
+broadcast chan unlock;
+broadcast chan lock;
+broadcast chan armedOn;
+broadcast chan armedOff;
+broadcast chan alarmOn;
+
+int s=0;</declaration>
+	<template>
+		<name x="5" y="5">Spec</name>
+		<declaration>// Place local declarations here.
+</declaration>
+		<location id="id0" x="229" y="-195">
+			<name x="219" y="-229">l6</name>
+			<label kind="invariant" x="212" y="-170">c&lt;=3</label>
+		</location>
+		<location id="id1" x="229" y="-263">
+			<name x="219" y="-297">l7</name>
+			<label kind="invariant" x="246" y="-263">c&lt;=3</label>
+		</location>
+		<location id="id2" x="-110" y="-195">
+			<name x="-120" y="-229">l4</name>
+			<label kind="invariant" x="-100" y="-188">c&lt;=3</label>
+		</location>
+		<location id="id3" x="144" y="16">
+			<name x="134" y="-18">l2</name>
+		</location>
+		<location id="id4" x="42" y="-195">
+			<name x="32" y="-229">l5</name>
+		</location>
+		<location id="id5" x="40" y="-96">
+			<name x="30" y="-130">l3</name>
+			<label kind="invariant" x="46" y="-125">c&lt;=5</label>
+		</location>
+		<location id="id6" x="-64" y="8">
+			<name x="-74" y="-26">l1</name>
+		</location>
+		<location id="id7" x="51" y="153">
+			<name x="41" y="119">l0</name>
+		</location>
+		<location id="id8" x="59" y="-348">
+			<name x="85" y="-348">l8</name>
+		</location>
+		<init ref="id7"/>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="17" y="-425">lock!</label>
+			<label kind="assignment" x="85" y="-433">s:= s&lt;50 ? s+1 : 50</label>
+			<nail x="34" y="-408"/>
+			<nail x="25" y="-374"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="67" y="-339">close!</label>
+			<label kind="assignment" x="67" y="-322">s:= s&lt;50 ? s+1 : 50</label>
+			<nail x="76" y="-297"/>
+			<nail x="42" y="-297"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="59" y="-416">unlock!</label>
+			<label kind="assignment" x="72" y="-373">s:= s&lt;50 ? s+1 : 50</label>
+			<nail x="85" y="-399"/>
+			<nail x="59" y="-399"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-25" y="-340">open!</label>
+			<label kind="assignment" x="-25" y="-323">s:= s&lt;50 ? s+1 : 50</label>
+			<nail x="17" y="-348"/>
+			<nail x="17" y="-314"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="93" y="-221">open!</label>
+			<label kind="assignment" x="93" y="-187">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="255" y="-238">armedOff!</label>
+			<label kind="assignment" x="255" y="-212">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="127" y="-391">alarmOn!</label>
+			<label kind="assignment" x="238" y="-331">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+			<nail x="229" y="-348"/>
+			<nail x="136" y="-348"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id4"/>
+			<label kind="guard" x="-16" y="-143">c&gt;=2</label>
+			<label kind="synchronisation" x="-31" y="-159">armedOn!</label>
+			<label kind="assignment" x="-8" y="-127">s:= s&lt;50 ? s+1 : 50</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="-100" y="-132">armedOff!</label>
+			<label kind="assignment" x="-104" y="-120">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+			<nail x="-104" y="-48"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-74" y="-209">unlock!</label>
+			<label kind="assignment" x="-93" y="-229">c:=0, s:= s&lt;50 ? s+1 : 50</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-78" y="82">open!</label>
+			<label kind="assignment" x="-204" y="136">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+			<nail x="-81" y="104"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id3"/>
+			<label kind="guard" x="101" y="-76">c&lt;2</label>
+			<label kind="synchronisation" x="95" y="-92">open!</label>
+			<label kind="assignment" x="68" y="-102">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+			<nail x="144" y="-96"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="87" y="91">unlock!</label>
+			<label kind="assignment" x="110" y="-408">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+			<nail x="144" y="112"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="50" y="-33">close!</label>
+			<label kind="assignment" x="50" y="-48">c:=0, s:= s&lt;50 ? s+1 : 50</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="58" y="44">lock!</label>
+			<label kind="assignment" x="58" y="64">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-59" y="-59">c&lt;2</label>
+			<label kind="synchronisation" x="-59" y="-76">unlock!</label>
+			<label kind="assignment" x="-59" y="-93">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+			<nail x="-64" y="-96"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-34" y="-25">lock!</label>
+			<label kind="assignment" x="-34" y="-42">c:=0, s:= s&lt;50 ? s+1 : 50</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="-9" y="42">close!</label>
+			<label kind="assignment" x="-17" y="25">s:= s&lt;50 ? s+1 : 50, c:=0</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+Process = Spec();
+
+// List one or more processes to be composed into a system.
+system Process;</system>
+	<queries>
+		<query>
+			<formula>E&lt;&gt;Process.l8</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt;s == 50</formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>

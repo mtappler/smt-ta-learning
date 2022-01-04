@@ -1,0 +1,57 @@
+Time logs for cas-diamond-20train
+==================================
+Configuration:
+==================================
+BFS: true 
+Batch size: -1 
+Location Bound: 10 
+Edge Bound: 20 
+# Training Traces: 20 
+k-Urgency: 3 
+Max. Guard Constant: 10 
+Solver: Z3 
+Mode: Integer 
+Rounding: 100 
+Learning time summary: 
+==================================
+Mean          :498.34          sec / 8.31       min
+Max           :498.34          sec / 8.31       min
+Min           :498.34          sec / 8.31       min
+Median        :498.34          sec / 8.31       min
+Automaton size summary: 
+==================================
+Mean          :7.00
+Max           :7.00
+Min           :7.00
+Median        :7.00
+Model metrics summary: 
+==================================
+Precision:
+Mean          :1.00
+Max           :1.00
+Min           :1.00
+Median        :1.00
+Recall:
+Mean          :0.40
+Max           :0.40
+Min           :0.40
+Median        :0.40
+F1:
+Mean          :0.57
+Max           :0.57
+Min           :0.57
+Median        :0.57
+Results for individual experiments: 
+==================================
+cas-diamond    :
+Learning Time  : 498.34          sec / 8.31       min
+TA Size        : 7
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 79
+True Negatives: 200
+False Positives: 0
+False Negatives: 121
+Precision: 1.00
+Recall: 0.40
+F1: 0.57

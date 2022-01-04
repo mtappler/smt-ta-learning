@@ -1,0 +1,20 @@
+digraph g {
+__start0 [label="" shape="none"];
+0 [shape="circle" margin=0 label="s0"];
+1 [shape="circle" margin=0 label="s1", xlabel="c <= 3"];
+2 [shape="circle" margin=0 label="s2", xlabel="c <= 3"];
+3 [shape="circle" margin=0 label="s3", xlabel="c <= 6"];
+4 [shape="circle" margin=0 label="s4", xlabel="c <= 3"];
+5 [shape="circle" margin=0 label="s5", xlabel="c <= 3"];
+6 [shape="circle" margin=0 label="s6", xlabel="c <= 30"];
+0 -> 1 [label="alarmOn? if c >= 0 & c < 10000 {c}"];
+1 -> 2 [label="soundOn! if c >= 0 & c < 3 {}"];
+2 -> 3 [label="flashOn! if c >= 0 & c < 3 {c}"];
+3 -> 4 [label="unlock? if c >= 0 & c < 6 {c}"];
+3 -> 6 [label="soundOff! if c >= 3 & c < 6 {c}"];
+4 -> 5 [label="soundOff! if c >= 0 & c < 3 {}"];
+5 -> 0 [label="flashOff! if c >= 0 & c < 3 {}"];
+6 -> 5 [label="unlock? if c >= 0 & c < 10000 {c}"];
+6 -> 0 [label="flashOff!s if c >= 27 & c < 30 {}"];
+__start0 -> 0;
+}

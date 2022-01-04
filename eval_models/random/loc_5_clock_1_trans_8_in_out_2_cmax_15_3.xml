@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nta PUBLIC "-//Uppaal Team//DTD Flat System 1.1//EN" "flat-1_1.dtd">
+
+<nta>
+  <declaration>broadcast chan out0;
+broadcast chan out1;
+broadcast chan in1;
+broadcast chan in0;
+clock c0;
+int s = 0;</declaration>
+  <template>
+    <name x="0" y="0">randomAutomaton</name>
+    <declaration />
+    <location x="0" y="0" id="id19835">
+      <name x="0" y="0">s0</name>
+      <label x="0" y="0" kind="invariant">(true) &amp;&amp; (c0 &lt;= 3)</label>
+    </location>
+    <location x="0" y="0" id="id19836">
+      <name x="0" y="0">s1</name>
+      <label x="0" y="0" kind="invariant">(true) &amp;&amp; (c0 &lt;= 3)</label>
+    </location>
+    <location x="0" y="0" id="id19837">
+      <name x="0" y="0">s2</name>
+      <label x="0" y="0" kind="invariant">(true) &amp;&amp; (c0 &lt;= 3)</label>
+    </location>
+    <location x="0" y="0" id="id19838">
+      <name x="0" y="0">s3</name>
+      <label x="0" y="0" kind="invariant">(true) &amp;&amp; (c0 &lt;= 3)</label>
+    </location>
+    <location x="0" y="0" id="id19839">
+      <name x="0" y="0">s4</name>
+      <label x="0" y="0" kind="invariant">(true) &amp;&amp; (c0 &lt;= 3)</label>
+    </location>
+    <init ref="id19835" />
+    <transition>
+      <source ref="id19839" />
+      <target ref="id19836" />
+      <label x="0" y="0" kind="guard">true</label>
+      <label x="0" y="0" kind="synchronisation">out1!</label>
+      <label x="0" y="0" kind="assignment">s++</label>
+    </transition>
+    <transition>
+      <source ref="id19835" />
+      <target ref="id19836" />
+      <label x="0" y="0" kind="guard">true</label>
+      <label x="0" y="0" kind="synchronisation">out0!</label>
+      <label x="0" y="0" kind="assignment">s++</label>
+    </transition>
+    <transition>
+      <source ref="id19835" />
+      <target ref="id19837" />
+      <label x="0" y="0" kind="guard">(true) &amp;&amp; (c0 &lt;= 2)</label>
+      <label x="0" y="0" kind="synchronisation">in1!</label>
+      <label x="0" y="0" kind="assignment">s++</label>
+    </transition>
+    <transition>
+      <source ref="id19836" />
+      <target ref="id19835" />
+      <label x="0" y="0" kind="guard">(true) &amp;&amp; (c0 &lt;= 9)</label>
+      <label x="0" y="0" kind="synchronisation">out1!</label>
+      <label x="0" y="0" kind="assignment">s++</label>
+    </transition>
+    <transition>
+      <source ref="id19836" />
+      <target ref="id19839" />
+      <label x="0" y="0" kind="guard">(true) &amp;&amp; (c0 &lt; 6)</label>
+      <label x="0" y="0" kind="synchronisation">in1!</label>
+      <label x="0" y="0" kind="assignment">c0:=0,
+s++</label>
+    </transition>
+    <transition>
+      <source ref="id19837" />
+      <target ref="id19836" />
+      <label x="0" y="0" kind="guard">true</label>
+      <label x="0" y="0" kind="synchronisation">out0!</label>
+      <label x="0" y="0" kind="assignment">s++</label>
+    </transition>
+    <transition>
+      <source ref="id19837" />
+      <target ref="id19838" />
+      <label x="0" y="0" kind="guard">true</label>
+      <label x="0" y="0" kind="synchronisation">in0!</label>
+      <label x="0" y="0" kind="assignment">s++</label>
+    </transition>
+    <transition>
+      <source ref="id19838" />
+      <target ref="id19837" />
+      <label x="0" y="0" kind="guard">(true) &amp;&amp; (c0 &lt;= 12)</label>
+      <label x="0" y="0" kind="synchronisation">out1!</label>
+      <label x="0" y="0" kind="assignment">s++</label>
+    </transition>
+  </template>
+  <template>
+    <name x="0" y="0">env</name>
+    <declaration />
+    <location x="0" y="0" id="id19840">
+      <name x="0" y="0">envInit</name>
+    </location>
+    <init ref="id19840" />
+    <transition>
+      <source ref="id19840" />
+      <target ref="id19840" />
+      <label x="0" y="0" kind="synchronisation">out0?</label>
+    </transition>
+    <transition>
+      <source ref="id19840" />
+      <target ref="id19840" />
+      <label x="0" y="0" kind="synchronisation">out1?</label>
+    </transition>
+    <transition>
+      <source ref="id19840" />
+      <target ref="id19840" />
+      <label x="0" y="0" kind="synchronisation">in1!</label>
+    </transition>
+    <transition>
+      <source ref="id19840" />
+      <target ref="id19840" />
+      <label x="0" y="0" kind="synchronisation">in0!</label>
+    </transition>
+  </template>
+  <system>system randomAutomaton;</system>
+</nta>
+

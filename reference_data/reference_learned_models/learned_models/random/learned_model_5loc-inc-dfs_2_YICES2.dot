@@ -1,0 +1,19 @@
+digraph g {
+                        __start0 [label="" shape="none"];
+0 [shape="circle" label="c <= 3"];
+0 -> 4 [label="in0?,0 <= c <= 2,res=true"];
+0 -> 1 [label="out0!,0 <= c <= 4,res=false"];
+0 -> 4 [label="in0?,2 <= c <= 15,res=true"];
+1 [shape="circle" label="c <= 18"];
+1 -> 5 [label="in0?,1 <= c <= 9,res=true"];
+1 -> 5 [label="in0?,9 <= c <= 19,res=true"];
+2 [shape="circle" label="c <= 11"];
+3 [shape="circle" label="c <= 2"];
+4 [shape="circle" label="c <= 3"];
+4 -> 5 [label="out1!,0 <= c <= 12,res=false"];
+5 [shape="circle" label="c <= 3"];
+5 -> 0 [label="in1?,0 <= c <= 2,res=true"];
+5 -> 0 [label="in1?,2 <= c <= 17,res=true"];
+5 -> 0 [label="out1!,0 <= c <= 10,res=true"];
+__start0 -> 0; 
+ }

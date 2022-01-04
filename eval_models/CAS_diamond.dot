@@ -1,0 +1,31 @@
+digraph g {
+__start0 [label="" shape="none"];
+0 [shape="circle" margin=0 label="s0"];
+1 [shape="circle" margin=0 label="s1"];
+2 [shape="circle" margin=0 label="s2"];
+3 [shape="circle" margin=0 label="s3", xlabel="c <= 5"];
+4 [shape="circle" margin=0 label="s4", xlabel="c <= 3"];
+5 [shape="circle" margin=0 label="s5"];
+6 [shape="circle" margin=0 label="s6", xlabel="c <= 3"];
+7 [shape="circle" margin=0 label="s7", xlabel="c <= 3"];
+8 [shape="circle" margin=0 label="s8"];
+0 -> 1 [label="close? if c >= 0 & c < 10000 {}"];
+0 -> 2 [label="lock? if c >= 0 & c < 10000 {}"];
+1 -> 0 [label="open? if c >= 0 & c < 10000 {}"];
+1 -> 3 [label="lock? if c >= 0 & c < 10000 {c}"];
+2 -> 0 [label="unlock? if c >= 0 & c < 10000 {}"];
+2 -> 3 [label="close? if c >= 0 & c < 10000 {c}"];
+3 -> 1 [label="unlock? if c >= 0 & c < 10000 {}"];
+3 -> 2 [label="open? if c >= 0 & c < 10000 {}"];
+3 -> 5 [label="armedOn? if c >= 2 & c < 5 {}"];
+5 -> 4 [label="unlock? if c >= 0 & c < 10000 {c}"];
+5 -> 6 [label="open? if c >= 0 & c < 10000 {c}"];
+4 -> 1 [label="armedOff! if c >= 0 & c < 10000 {c}"];
+6 -> 7 [label="armedOff! if c >= 0 & c < 3 {c}"];
+7 -> 8 [label="alarmOn! if c >= 0 & c < 3 {c}"];
+8 -> 8 [label="open? if c >= 0 & c < 10000 {c}"];
+8 -> 8 [label="lock? if c >= 0 & c < 10000 {c}"];
+8 -> 8 [label="unlock? if c >= 0 & c < 10000 {c}"];
+8 -> 8 [label="close? if c >= 0 & c < 10000 {c}"];
+__start0 -> 0;
+}

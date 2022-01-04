@@ -1,0 +1,24 @@
+digraph g {
+__start0 [label="" shape="none"];
+s0 [shape="circle" margin=0 label="s0", xlabel="c0 <= 3"];
+s1 [shape="circle" margin=0 label="s1", xlabel="c0 <= 3"];
+s2 [shape="circle" margin=0 label="s2", xlabel="c0 <= 3"];
+s3 [shape="circle" margin=0 label="s3"];
+s4 [shape="circle" margin=0 label="s4"];
+s5 [shape="circle" margin=0 label="s5", xlabel="c0 <= 3"];
+s6 [shape="circle" margin=0 label="s6"];
+s7 [shape="circle" margin=0 label="s7", xlabel="c0 <= 3"];
+s0 -> s1 [label="in1? if true {c0} "];
+s0 -> s2 [label="out0! if c0 <= 15 {} "];
+s0 -> s6 [label="in0? if true {} "];
+s1 -> s0 [label="out1! if true {c0} "];
+s1 -> s4 [label="in0? if true {} "];
+s1 -> s6 [label="in1? if true {} "];
+s2 -> s7 [label="in0? if true {} "];
+s3 -> s6 [label="in1? if c0 >= 1 {c0} "];
+s4 -> s3 [label="in1? if true {} "];
+s5 -> s1 [label="out1! if c0 < 5 {c0} "];
+s6 -> s0 [label="in1? if true {c0} "];
+s7 -> s5 [label="out1! if true {c0} "];
+__start0 -> s0;
+}

@@ -1,0 +1,13 @@
+digraph g {
+__start0 [label="" shape="none"];
+l0 [shape="circle" margin=0 label="l0", xlabel="c <= 301"];
+l1 [shape="circle" margin=0 label="l1", xlabel="c <= 347"];
+l2 [shape="circle" margin=0 label="l2", xlabel="c <= 797"];
+l0 -> l2 [label="out0! if c >= 1 & c < 298 {} "];
+l0 -> l1 [label="in1? if c >= 2 & c < 792 {} "];
+l1 -> l0 [label="out1! if c >= 47 & c < 293 {c} "];
+l2 -> l2 [label="in0? if c >= 1 & c < 100000 {} "];
+l2 -> l2 [label="in1? if c >= 2 & c < 791 {} "];
+l2 -> l2 [label="out0! if c >= 497 & c < 797 {c} "];
+__start0 -> l0;
+}

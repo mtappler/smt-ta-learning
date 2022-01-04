@@ -1,0 +1,26 @@
+digraph g {
+__start0 [label="" shape="none"];
+l0 [shape="circle" margin=0 label="l0", xlabel="c <= 27"];
+l1 [shape="circle" margin=0 label="l1", xlabel="c <= 28"];
+l2 [shape="circle" margin=0 label="l2", xlabel="c <= 5"];
+l3 [shape="circle" margin=0 label="l3", xlabel="c <= 3"];
+l6 [shape="circle" margin=0 label="l6", xlabel="c <= 3"];
+l7 [shape="circle" margin=0 label="l7", xlabel="c <= 3"];
+l0 -> l1 [label="lock? if c >= 0 & c < 1399 {c} "];
+l0 -> l2 [label="open? if c >= 1 & c < 3 {c} "];
+l0 -> l7 [label="open? if c >= 3 & c < 2748 {c} "];
+l0 -> l1 [label="close? if c >= 0 & c < 2997 {} "];
+l0 -> l6 [label="unlock? if c >= 1 & c < 1000 {c} "];
+l1 -> l0 [label="unlock? if c >= 0 & c < 1725 {c} "];
+l1 -> l2 [label="close? if c >= 0 & c < 1487 {c} "];
+l1 -> l0 [label="open? if c >= 0 & c < 1084 {} "];
+l1 -> l2 [label="lock? if c >= 0 & c < 1663 {c} "];
+l2 -> l0 [label="armedOn! if c >= 2 & c < 5 {} "];
+l2 -> l1 [label="unlock? if c >= 0 & c < 10 {c} "];
+l2 -> l1 [label="open? if c >= 0 & c < 10 {c} "];
+l3 -> l0 [label="alarmOn! if c >= 0 & c < 3 {c} "];
+l6 -> l1 [label="armedOff! if c >= 0 & c < 3 {} "];
+l7 -> l3 [label="armedOff! if c >= 0 & c < 2 {c} "];
+l7 -> l3 [label="armedOff! if c >= 2 & c < 3 {c} "];
+__start0 -> l0;
+}

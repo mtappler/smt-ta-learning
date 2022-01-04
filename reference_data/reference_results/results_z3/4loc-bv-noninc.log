@@ -1,0 +1,165 @@
+Time logs for 4loc-bfs-noninc
+==================================
+Configuration:
+==================================
+BFS: true 
+Batch size: -1 
+Location Bound: 5 
+Edge Bound: 10 
+# Training Traces: 40 
+k-Urgency: 3 
+Max. Guard Constant: 20 
+Solver: Z3 
+Mode: BV 
+Rounding: 100 
+Learning time summary: 
+==================================
+Mean          :85.37           sec / 1.42       min
+Max           :267.15          sec / 4.45       min
+Min           :18.10           sec / 0.30       min
+Median        :73.43           sec / 1.22       min
+Automaton size summary: 
+==================================
+Mean          :3.60
+Max           :4.00
+Min           :2.00
+Median        :4.00
+Model metrics summary: 
+==================================
+Precision:
+Mean          :0.97
+Max           :1.00
+Min           :0.88
+Median        :0.97
+Recall:
+Mean          :0.88
+Max           :0.94
+Min           :0.80
+Median        :0.88
+F1:
+Mean          :0.92
+Max           :0.96
+Min           :0.87
+Median        :0.92
+Results for individual experiments: 
+==================================
+Seed 1         :
+Learning Time  : 84.83           sec / 1.41       min
+TA Size        : 4
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 180
+True Negatives: 200
+False Positives: 0
+False Negatives: 20
+Precision: 1.00
+Recall: 0.90
+F1: 0.95
+Seed 2         :
+Learning Time  : 34.68           sec / 0.58       min
+TA Size        : 3
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 182
+True Negatives: 200
+False Positives: 0
+False Negatives: 18
+Precision: 1.00
+Recall: 0.91
+F1: 0.95
+Seed 3         :
+Learning Time  : 28.23           sec / 0.47       min
+TA Size        : 3
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 184
+True Negatives: 197
+False Positives: 3
+False Negatives: 16
+Precision: 0.98
+Recall: 0.92
+F1: 0.95
+Seed 4         :
+Learning Time  : 18.10           sec / 0.30       min
+TA Size        : 2
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 188
+True Negatives: 198
+False Positives: 2
+False Negatives: 12
+Precision: 0.99
+Recall: 0.94
+F1: 0.96
+Seed 10        :
+Learning Time  : 72.29           sec / 1.20       min
+TA Size        : 4
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 174
+True Negatives: 193
+False Positives: 7
+False Negatives: 26
+Precision: 0.96
+Recall: 0.87
+F1: 0.91
+Seed 5         :
+Learning Time  : 74.57           sec / 1.24       min
+TA Size        : 4
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 177
+True Negatives: 197
+False Positives: 3
+False Negatives: 23
+Precision: 0.98
+Recall: 0.89
+F1: 0.93
+Seed 6         :
+Learning Time  : 104.90          sec / 1.75       min
+TA Size        : 4
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 181
+True Negatives: 197
+False Positives: 3
+False Negatives: 19
+Precision: 0.98
+Recall: 0.91
+F1: 0.94
+Seed 7         :
+Learning Time  : 117.25          sec / 1.95       min
+TA Size        : 4
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 172
+True Negatives: 184
+False Positives: 16
+False Negatives: 28
+Precision: 0.91
+Recall: 0.86
+F1: 0.89
+Seed 8         :
+Learning Time  : 267.15          sec / 4.45       min
+TA Size        : 4
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 160
+True Negatives: 199
+False Positives: 1
+False Negatives: 40
+Precision: 0.99
+Recall: 0.80
+F1: 0.89
+Seed 9         :
+Learning Time  : 51.70           sec / 0.86       min
+TA Size        : 4
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 171
+True Negatives: 176
+False Positives: 24
+False Negatives: 29
+Precision: 0.88
+Recall: 0.86
+F1: 0.87

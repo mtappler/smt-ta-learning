@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>!-->
+<nta>
+	<declaration>// Place global declarations here.
+
+clock c;
+
+broadcast chan unlock;
+broadcast chan armedOn;
+broadcast chan armedOff;
+broadcast chan soundOn;
+broadcast chan soundOff;
+broadcast chan flashOn;
+broadcast chan flashOff;
+broadcast chan alarmOn;
+
+
+int s=0;</declaration>
+	<template>
+		<name>Template</name>
+		<location id="id0" x="-170" y="-127">
+			<name x="-180" y="-161">l0</name>
+		</location>
+		<location id="id1" x="59" y="-127">
+			<name x="49" y="-161">l1</name>
+			<label kind="invariant" x="68" y="-110">c&lt;=3</label>
+		</location>
+		<location id="id2" x="-59" y="0">
+			<name x="-69" y="-34">l6</name>
+			<label kind="invariant" x="-42" y="-17">c&lt;=30</label>
+		</location>
+		<location id="id3" x="59" y="-8">
+			<name x="49" y="-42">l2</name>
+			<label kind="invariant" x="76" y="8">c&lt;=3</label>
+		</location>
+		<location id="id4" x="-170" y="144">
+			<name x="-180" y="110">l5</name>
+			<label kind="invariant" x="-195" y="161">c&lt;=3</label>
+		</location>
+		<location id="id5" x="-59" y="144">
+			<name x="-69" y="110">l4</name>
+			<label kind="invariant" x="-69" y="161">c&lt;=3</label>
+		</location>
+		<location id="id6" x="59" y="144">
+			<name x="49" y="110">l3</name>
+			<label kind="invariant" x="76" y="153">c&lt;=6</label>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="-255" y="-8">flashOff!</label>
+			<label kind="assignment" x="-238" y="8">s++</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-161" y="25">unlock!</label>
+			<label kind="assignment" x="-144" y="42">c:=0,s++</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-119" y="-110">c&gt;=27</label>
+			<label kind="synchronisation" x="-119" y="-85">flashOff!</label>
+			<label kind="assignment" x="-102" y="-68">s++</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-17" y="17">c&gt;=3</label>
+			<label kind="synchronisation" x="-51" y="34">soundOff!</label>
+			<label kind="assignment" x="-51" y="51">s++,c:=0</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-153" y="161">soundOff!</label>
+			<label kind="assignment" x="-152" y="144">s++</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-34" y="144">unlock!</label>
+			<label kind="assignment" x="-25" y="161">c:=0,s++</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="68" y="59">flashOn!</label>
+			<label kind="assignment" x="76" y="76">c:=0, s++</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="59" y="-84">soundOn!</label>
+			<label kind="assignment" x="59" y="-67">s++</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="-68" y="-170">alarmOn!</label>
+			<label kind="assignment" x="-34" y="-153">c:=0, s++</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+
+// List one or more processes to be composed into a system.
+system Template;</system>
+	<queries>
+		<query>
+			<formula>E&lt;&gt;s == 50</formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>

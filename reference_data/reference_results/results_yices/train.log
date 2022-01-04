@@ -1,0 +1,57 @@
+Time logs for train
+==================================
+Configuration:
+==================================
+BFS: true 
+Batch size: 1 
+Location Bound: 7 
+Edge Bound: 18 
+# Training Traces: 50 
+k-Urgency: 3 
+Max. Guard Constant: 20 
+Solver: YICES2 
+Mode: Real 
+Rounding: 1 
+Learning time summary: 
+==================================
+Mean          :22979.34        sec / 382.99     min
+Max           :22979.34        sec / 382.99     min
+Min           :22979.34        sec / 382.99     min
+Median        :22979.34        sec / 382.99     min
+Automaton size summary: 
+==================================
+Mean          :6.00
+Max           :6.00
+Min           :6.00
+Median        :6.00
+Model metrics summary: 
+==================================
+Precision:
+Mean          :1.00
+Max           :1.00
+Min           :1.00
+Median        :1.00
+Recall:
+Mean          :1.00
+Max           :1.00
+Min           :1.00
+Median        :1.00
+F1:
+Mean          :1.00
+Max           :1.00
+Min           :1.00
+Median        :1.00
+Results for individual experiments: 
+==================================
+train          :
+Learning Time  : 22979.34        sec / 382.99     min
+TA Size        : 6
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 200
+True Negatives: 200
+False Positives: 0
+False Negatives: 0
+Precision: 1.00
+Recall: 1.00
+F1: 1.00

@@ -1,0 +1,57 @@
+Time logs for cas-diamond-50-train
+==================================
+Configuration:
+==================================
+BFS: true 
+Batch size: 1 
+Location Bound: 10 
+Edge Bound: 20 
+# Training Traces: 50 
+k-Urgency: 3 
+Max. Guard Constant: 10 
+Solver: YICES2 
+Mode: Real 
+Rounding: 1 
+Learning time summary: 
+==================================
+Mean          :21732.89        sec / 362.21     min
+Max           :21732.89        sec / 362.21     min
+Min           :21732.89        sec / 362.21     min
+Median        :21732.89        sec / 362.21     min
+Automaton size summary: 
+==================================
+Mean          :8.00
+Max           :8.00
+Min           :8.00
+Median        :8.00
+Model metrics summary: 
+==================================
+Precision:
+Mean          :0.82
+Max           :0.82
+Min           :0.82
+Median        :0.82
+Recall:
+Mean          :0.44
+Max           :0.44
+Min           :0.44
+Median        :0.44
+F1:
+Mean          :0.57
+Max           :0.57
+Min           :0.57
+Median        :0.57
+Results for individual experiments: 
+==================================
+cas-diamond    :
+Learning Time  : 21732.89        sec / 362.21     min
+TA Size        : 8
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 87
+True Negatives: 181
+False Positives: 19
+False Negatives: 113
+Precision: 0.82
+Recall: 0.44
+F1: 0.57

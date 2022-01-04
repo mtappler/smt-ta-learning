@@ -1,0 +1,21 @@
+digraph g {
+__start0 [label="" shape="none"];
+0 [shape="circle" margin=0 label="s0"];
+1 [shape="circle" margin=0 label="s1", xlabel="c <= 5"];
+2 [shape="circle" margin=0 label="s2", xlabel="c <= 15"];
+3 [shape="circle" margin=0 label="s3"];
+4 [shape="circle" margin=0 label="s4", xlabel="c <= 10"];
+5 [shape="circle" margin=0 label="s5", xlabel="c <= 6"];
+0 -> 1 [label="start? if c >= 0 & c < 10000 {c}"];
+0 -> 0 [label="stop? if c >= 0 & c < 10000 {}"];
+0 -> 0 [label="go? if c >= 0 & c < 10000 {}"];
+1 -> 2 [label="appr! if c >= 2 & c < 5 {c}"];
+2 -> 3 [label="stop? if c >= 0 & c < 15 {}"];
+2 -> 2 [label="go? if c >= 0 & c < 10000 {}"];
+2 -> 5 [label="enter! if c >= 12 & c < 15 {c}"];
+3 -> 4 [label="go? if c >= 0 & c < 10000 {c}"];
+3 -> 3 [label="stop? if c >= 0 & c < 10000 {}"];
+4 -> 5 [label="enter! if c >= 7 & c < 10 {c}"];
+5 -> 0 [label="leave! if c >= 3 & c < 6 {c}"];
+__start0 -> 0;
+}

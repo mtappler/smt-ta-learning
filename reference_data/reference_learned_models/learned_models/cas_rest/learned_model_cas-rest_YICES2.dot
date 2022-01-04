@@ -1,0 +1,21 @@
+digraph g {
+__start0 [label="" shape="none"];
+l0 [shape="circle" margin=0 label="l0", xlabel="c <= 30"];
+l1 [shape="circle" margin=0 label="l1", xlabel="c <= 3"];
+l2 [shape="circle" margin=0 label="l2", xlabel="c <= 6"];
+l3 [shape="circle" margin=0 label="l3", xlabel="c <= 3"];
+l4 [shape="circle" margin=0 label="l4", xlabel="c <= 3"];
+l5 [shape="circle" margin=0 label="l5", xlabel="c <= 3"];
+l0 -> l3 [label="alarmOn? if c >= 0 & c < 30 {c} "];
+l0 -> l5 [label="unlock? if c >= 0 & c < 28 {c} "];
+l0 -> l0 [label="flashOff! if c >= 27 & c < 30 {} "];
+l1 -> l5 [label="soundOff! if c >= 0 & c < 3 {} "];
+l2 -> l1 [label="unlock? if c >= 0 & c < 12 {c} "];
+l2 -> l0 [label="soundOff! if c >= 3 & c < 6 {c} "];
+l3 -> l4 [label="soundOn! if c >= 2 & c < 3 {} "];
+l3 -> l4 [label="soundOn! if c >= 1 & c < 2 {c} "];
+l3 -> l4 [label="soundOn! if c >= 0 & c < 1 {c} "];
+l4 -> l2 [label="flashOn! if c >= 0 & c < 3 {c} "];
+l5 -> l0 [label="flashOff! if c >= 0 & c < 3 {} "];
+__start0 -> l0;
+}

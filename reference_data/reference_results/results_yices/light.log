@@ -1,0 +1,57 @@
+Time logs for light
+==================================
+Configuration:
+==================================
+BFS: true 
+Batch size: 1 
+Location Bound: 6 
+Edge Bound: 18 
+# Training Traces: 50 
+k-Urgency: 3 
+Max. Guard Constant: 15 
+Solver: YICES2 
+Mode: Real 
+Rounding: 1 
+Learning time summary: 
+==================================
+Mean          :1385.98         sec / 23.10      min
+Max           :1385.98         sec / 23.10      min
+Min           :1385.98         sec / 23.10      min
+Median        :1385.98         sec / 23.10      min
+Automaton size summary: 
+==================================
+Mean          :5.00
+Max           :5.00
+Min           :5.00
+Median        :5.00
+Model metrics summary: 
+==================================
+Precision:
+Mean          :0.99
+Max           :0.99
+Min           :0.99
+Median        :0.99
+Recall:
+Mean          :0.97
+Max           :0.97
+Min           :0.97
+Median        :0.97
+F1:
+Mean          :0.98
+Max           :0.98
+Min           :0.98
+Median        :0.98
+Results for individual experiments: 
+==================================
+light          :
+Learning Time  : 1385.98         sec / 23.10      min
+TA Size        : 5
+Model statistics
+Evaluation Statistics for 200 pos. and 200 neg. traces: 
+True Positives: 193
+True Negatives: 199
+False Positives: 1
+False Negatives: 7
+Precision: 0.99
+Recall: 0.97
+F1: 0.98

@@ -1,0 +1,27 @@
+# name of one of eight experiments
+experimentName=train
+# number of traces to be considered for learning
+nrTrainingTraces=50
+# max number of location and edges, as well as the ratio el between those (see 
+# Algorithm 1 in the paper)
+maxNrLocations=7
+maxNrEdges=18
+edgesPerLocation=2
+# the k for k urgency and the maximum constant (except for a value denoting that 
+# the absence of an upper bound)
+kUrgency=3
+maxGuardConstant=20
+# set to true if incremental solving should be used
+incremental=true
+# BFS constraint solving and putting discrete constraints first on the stack, 
+# both are  irrelevant if incremental=false
+bfsMode=true
+discreteFirst=true
+# the name of the solver to be used and the theory
+solver=SMTINTERPOL
+theory=Real
+# a factor with which all delays and maxGuardConstant are multiplied, this 
+# should be 1 if the theory of Reals is used
+roundingFactor=1
+# set to true to skip quality evaluation
+skipQualityEval=false

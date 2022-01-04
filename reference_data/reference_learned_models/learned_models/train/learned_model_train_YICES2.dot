@@ -1,0 +1,22 @@
+digraph g {
+__start0 [label="" shape="none"];
+l0 [shape="circle" margin=0 label="l0", xlabel="c <= 31"];
+l1 [shape="circle" margin=0 label="l1", xlabel="c <= 34"];
+l2 [shape="circle" margin=0 label="l2", xlabel="c <= 10"];
+l3 [shape="circle" margin=0 label="l3", xlabel="c <= 6"];
+l4 [shape="circle" margin=0 label="l4", xlabel="c <= 15"];
+l5 [shape="circle" margin=0 label="l5", xlabel="c <= 5"];
+l0 -> l5 [label="start? if c >= 0 & c < 20 {c} "];
+l0 -> l0 [label="stop? if c >= 0 & c < 1005 {} "];
+l0 -> l0 [label="go? if c >= 0 & c < 20 {} "];
+l1 -> l2 [label="go? if c >= 0 & c < 10 {c} "];
+l1 -> l1 [label="stop? if c >= 0 & c < 20 {} "];
+l1 -> l2 [label="go? if c >= 10 & c < 1001 {c} "];
+l2 -> l3 [label="enter! if c >= 7 & c < 10 {c} "];
+l3 -> l0 [label="leave! if c >= 3 & c < 6 {c} "];
+l4 -> l3 [label="enter! if c >= 12 & c < 15 {c} "];
+l4 -> l4 [label="go? if c >= 0 & c < 20 {} "];
+l4 -> l1 [label="stop? if c >= 0 & c < 1000 {c} "];
+l5 -> l4 [label="appr! if c >= 2 & c < 5 {c} "];
+__start0 -> l0;
+}
