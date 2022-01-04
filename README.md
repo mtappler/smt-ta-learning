@@ -144,8 +144,9 @@ encoding of time using integers), ```BV``` (discretized
 encoding of time using bitvectors), ```FP``` (floating-point encoding of time -- 
 not covered in the paper, as it is very inefficient)
 * ```roundingFactor```: a factor with which all time values are multiplied to 
-enable discretization, see also Section 4.1 (value "r"). Admissible values
-are positive integers.
+enable discretization, see also Section 4.1 (value "r"). If the theory of reals
+is used, this value must be set to 1. Otherwise, the model evaluation results 
+will be wrong. Admissible values are positive integers.
 * ```skipQualityEval```: set to true to avoid computing model quality metrics,
 like precision and recall. By setting this value to true, the Uppaal setup 
 can be skipped. Admissible values are Boolean literals. 
