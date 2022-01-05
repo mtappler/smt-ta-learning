@@ -11,7 +11,7 @@ including runtime measurement results
 and learned automata, presented in the paper.
 
 ## Overview
-Timed automata are formal methods of real-time 
+Timed automata are formal models of real-time 
 systems that produce timed traces. This kind of 
 traces are sequences of input and output actions 
 with real-valued delays between them. Our implemented
